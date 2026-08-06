@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/Button";
 import { GitHubIcon } from "../ui/GitHubIcon";
 import { GITHUB_URL, NAV_LINKS } from "../../config/landing";
@@ -133,9 +134,11 @@ export function Navbar() {
             </span>
             GitHub
           </a>
-          <Button size="md" className="h-9 px-4 text-sm">
-            Get Started
-          </Button>
+          <Link to="/register">
+            <Button size="md" className="h-9 px-4 text-sm">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         <button
@@ -201,9 +204,11 @@ export function Navbar() {
                 </span>
                 GitHub
               </a>
-              <Button size="lg" className="w-full">
-                Get Started
-              </Button>
+              <Link to="/register" onClick={() => setOpen(false)}>
+                <Button size="lg" className="w-full">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </motion.div>
         ) : null}
